@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ReplyPilot policy settings</title>
+<link rel="stylesheet" href="styles.css">
+<style> body { max-width: 640px; } input { margin-top: 2px; } </style>
+</head>
+<body>
+<h1>ReplyPilot policy settings</h1>
+<p class="tagline">Every draft ReplyPilot writes is grounded in this policy and nothing else. Edit any line and save. The same content ships in the extension as policy.json.</p>
+
+<div id="policy-form"></div>
+
+<div class="row">
+  <button id="save-btn" type="button">Save policy</button>
+  <button id="reset-btn" class="secondary" type="button">Reset to defaults</button>
+</div>
+
+<label for="policy-json">Policy as JSON (import / export)</label>
+<textarea id="policy-json" style="min-height:180px"></textarea>
+<div class="row">
+  <button id="import-btn" class="secondary" type="button">Import JSON into form</button>
+</div>
+<p id="status"></p>
+
+<script src="policy-store.js"></script>
+<script src="options.js"></script>
+</body>
+</html>

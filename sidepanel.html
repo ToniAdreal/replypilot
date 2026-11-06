@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ReplyPilot</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>ReplyPilot</h1>
+<p class="tagline">Drafts grounded in your policy file only. Missing facts become [NEEDS INFO], never guesses. You always send.</p>
+
+<label for="sample-select">Bundled sample email</label>
+<div class="row" style="margin-top:0">
+  <select id="sample-select"></select>
+  <button id="load-sample-btn" class="secondary" type="button">Load sample</button>
+</div>
+
+<label for="email-input">Customer email</label>
+<textarea id="email-input" placeholder="Paste the customer's email here"></textarea>
+
+<label for="intent-select">Intent</label>
+<select id="intent-select">
+  <option value="shipping">Shipping status</option>
+  <option value="return">Return</option>
+  <option value="refund">Refund</option>
+  <option value="damaged">Damaged item</option>
+  <option value="general">General</option>
+</select>
+
+<div class="row">
+  <button id="generate-btn" type="button">Generate draft</button>
+</div>
+
+<label for="draft-output">Draft reply (review before sending)</label>
+<textarea id="draft-output" readonly></textarea>
+<div class="row">
+  <button id="copy-btn" class="secondary" type="button">Copy draft</button>
+</div>
+<p id="needs-info">Drafts only use facts from your policy file or the customer's email.</p>
+
+<script src="template-engine.js"></script>
+<script src="llm-adapter.js"></script>
+<script src="policy-store.js"></script>
+<script src="samples.js"></script>
+<script src="draft-app.js"></script>
+</body>
+</html>

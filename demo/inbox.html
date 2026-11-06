@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ReplyPilot demo inbox</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { max-width: 760px; margin: 0 auto; }
+  .mail { display: block; width: 100%; text-align: left; background: #fff; color: #1c2333; border: 1px solid #c9d0dd; margin-bottom: 6px; }
+  .mail.active { border-color: #2456d6; background: #eef3ff; }
+  pre { white-space: pre-wrap; background: #fff; border: 1px solid #c9d0dd; border-radius: 8px; padding: 10px; font-size: 13px; }
+</style>
+</head>
+<body>
+<h1>ReplyPilot demo inbox</h1>
+<p class="tagline">A stand-in inbox for the fictional store Willow &amp; Wick Home Goods, so the demo needs no Gmail access. Pick a customer email, then load it into the drafting flow.</p>
+
+<h2 style="font-size:14px">Inbox</h2>
+<div id="inbox-list"></div>
+
+<h2 id="mail-subject" style="font-size:14px"></h2>
+<pre id="mail-body"></pre>
+<p id="mail-note" style="font-size:12px;color:#5a6478"></p>
+<div class="row">
+  <button id="draft-btn" type="button">Draft a reply with ReplyPilot</button>
+</div>
+
+<div id="draft-panel">
+  <label for="draft-output">Draft reply (a human reviews and sends this, ReplyPilot never sends)</label>
+  <textarea id="draft-output" readonly></textarea>
+  <p id="needs-info">No draft generated yet.</p>
+</div>
+
+<script src="../template-engine.js"></script>
+<script src="../llm-adapter.js"></script>
+<script src="../policy-store.js"></script>
+<script src="../samples.js"></script>
+<script src="inbox.js"></script>
+</body>
+</html>
